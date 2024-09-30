@@ -1,0 +1,19 @@
+#h1 {
+    font-size: 42pix;
+    color: coral;
+}
+
+.colortomato {
+    color: tomato;
+    font: size 30pix;
+}
+
+ol, ul {
+color: brown;
+font: size 21px;
+}
+
+p, a {
+color: chocolate;font: size 21px;
+    
+}
