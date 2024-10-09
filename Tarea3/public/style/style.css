@@ -1,0 +1,48 @@
+#h1 {
+border: hidden 5px orange; 
+padding: dotted 10px;
+margin:dotted 10px; 
+font-size: 42pix;
+color: coral;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color :burlywood    
+}
+
+.colortomato {
+    color: tomato;
+    font: size 30pix;
+}
+
+ol, ul {
+border: dotted 5px royalblue ; 
+padding: dotted 20px;
+margin: dotted 20px; 
+color: brown;
+font: size 21px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+background-color :burlywood;
+}
+
+p {
+border: dotted 5px hotpink; 
+padding: dotted 10px;
+margin: dotted 10px;   
+        
+}
+a  { 
+border: dotted 5px darkorange;    
+padding: dotted 10px;
+ margin: dotted 10px;   
+font: size 21px;
+font-family: cursive;
+background-color :burlywood;
+}
+
+div {
+border: dotted 5px darkgray;    
+padding: dotted 10px;
+margin: dotted 10px;
+font: size 21px;
+font-family: cursive;
+background-color :burlywood;
+}
