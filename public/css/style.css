@@ -1,0 +1,446 @@
+/* ESTILOS COMUNES (Box-sizing: border-box se usa para controlar como se calcula el ancho y el alto de un elemento*/ 
+
+* {
+    box-sizing: border-box; 
+}
+
+/* margin y padding:con esto logramos que la pagina cubra por completo la ventana del navegador */
+/* font-family: tipo de fuente, podemos incluir de una desde google o predeterminada del visual */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+/* border radius: para que se redondeen los bordes*/
+img {
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+}
+/* colores
+color navbar: black
+color aside: bisque
+color fondo: grey / darkgrey
+color sec: bisque /darkgrey
+colores fontfamily: black /white /bisque /yellow
+color footer: black 
+*/
+
+/* ESTILO HEADER*/
+header {
+    padding:60px;
+    text-align: center;
+    background-image: url(../img/fondo1.jpg); /*imagen de fondo */
+    background-repeat: no-repeat;  /*no te repitas */
+    background-size: cover;
+}
+
+/* MODIFICANDO EL DIV DENTRO DE HEADER */
+header div {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: bisque;
+    color: black;
+    font-size: 1.1rem;
+}
+
+header h1 {
+    color:yellow;
+}
+
+/* Siempre y cuando el tamaño de pantalla sea menos de 800px y se cumpla esta condicion*/ 
+@media (max-width:800px) {
+    header {
+        background-position: center;
+    }
+}
+
+/* Estilo navbar */
+/* El posicionamiento sticky puede considerarse un híbrido de los posicionamientos relativo y fijo. Un elemento con posicionamiento sticky es tratado como un elemento posicionado relativamente hasta que cruza un umbral especificado, en cuyo punto se trata como fijo hasta que alcanza el límite de su padre*/
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color:black;
+    position: sticky;
+    top: 0;
+    gap: 10px;
+    z-index: 1;
+}
+
+/* MODIFICO LOS ELEMENTOS " a " dentro de navbar */
+.navbar a {
+    color: bisque;
+    padding: 14px 20 px;
+    text-decoration: none;
+}
+
+/* seudo clase hover: le cambiamos el estilo frente a cierta situacion */
+
+.navbar a:hover {
+    background-color: yellow;
+    color: black;
+    border-radius: 2%;
+}
+/* Tengo que lograr que mi barra de navegacion se adapte al contenido */
+
+/* Siempre y cuando el tamaño de pantalla sea menos de 800px y se cumpla esta condicion*/ 
+@media (max-width: 800px) {
+.navbar {
+    flex-direction: column;
+    position: unset;
+}
+
+.navbar a {
+    text-align: center;
+}
+}
+
+/*Flexbox es un modo de diseño que nos
+permite crear estructuras para sitios web de
+una forma más fácil. */
+/*✓ Es un conjunto de propiedades de CSS.
+✓ Se basa sobre un contenedor (padre) para ordenar a sus ítems (hijos).
+✓ No solo se podrá posicionar elementos vertical y horizontalmente,
+sino que podrás establecer cómo se distribuirán, el orden que
+tendrán e incluso el tamaño en proporción a otros elementos.
+✓ Esto es perfecto para crear diseños adaptables a dispositivos móviles
+(Responsive Design) */ /* Distribuir los elementos en sentido vertical y horizontal.
+✓ Facilitar la adaptación del contenido en distintos dispositivos
+✓ Redefinir el sentido del flujo de los elementos (hacia arriba, hacia abajo, hacia
+la izquierda o hacia la derecha).
+✓ Alinear los elementos respecto al padre o respecto a sus hermanos. */
+
+/*La propiedad flex-wrap de CSS especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también te permite controlar la dirección en la cual serán apilados los elementos*/
+/*ESTILOS PARTE PRINCIPAL INDEX*/
+
+.principal {
+display: flex;
+flex-wrap: wrap;
+}
+
+/*La propiedad de CSS flex-basis especifíca la base flexible, la cual es el tamaño inicial de un elemento flexible. Ésta propiedad determina el tamaño de una caja de contenidos a no ser que se haya especificado de otra forma usando box-sizing  */
+/*El elemento HTML <aside> representa una sección de una página que consiste en contenido que está indirectamente relacionado con el contenido principal del documento*/
+aside {
+  flex-basis: 30%;
+  background-color: bisque;
+  padding: 10px;
+  text-align: center; 
+  border-radius: 1%;
+}
+
+/*El elemento HTML <main> representa el contenido principal del <body> de un documento o aplicación. El área principal del contenido consiste en el contenido que está directamente relacionado, o se expande sobre el tema central de un documento o la funcionalidad central de una aplicación*/
+
+main {
+    flex-basis: 70%;
+    background-color: grey;
+    padding: 20px;
+    padding-left: 40px;
+}
+
+@media (max-width:800px) {
+    .principal {
+        flex-direction: column;
+    }
+}
+
+/* ESTILOS DE ASIDE */
+/*La propiedad CSS object-fit indica cómo el contenido de un elemento reemplazado, por ejemplo un <img> o <video> , debería redimensionarse para ajustarse a su contenedor. Se puede alterar la alineación del contenido del elemento reemplazado utilizando la propiedad object-position .*/
+
+/*object-fit: cover le dice al elemento que escale su contenido para que se ajuste a la relación de aspecto del elemento contenedor mientras cubre completamente el elemento contenedor*/
+
+.image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: 0.5s all ease-in-out;
+}
+/*El método scale() aumenta o disminuye el tamaño de un elemento (según los parámetros dados para el ancho y la altura).*/
+/*Comprensión de la sintaxis y los valores de transformación de CSS: escalar
+
+Un valor de 1 deja el elemento en su tamaño original, los valores menores que 1 reducen el tamaño del elemento y los valores mayores que 1 lo amplían . Por ejemplo, un valor de 0,5 reduce el tamaño del elemento a la mitad y un valor de 2 aumenta el tamaño del elemento al doble.*/
+
+.image:hover img {
+    transform: scale(1.05);
+}
+
+/*text-decoration es una propiedad CSS que se utiliza para añadir efectos decorativos al texto . Se utiliza principalmente para subrayar, tachar o añadir una línea encima o debajo del texto.*/
+
+.asidetitle {
+    text-decoration: underline;
+}
+
+/*Resumen. La regla-at CSS @media asocia un grupo de declaraciones anidadas, en un bloque CSS delimitado por llaves, con una condición definida por un media query. La regla-at @media puede ser usada no solo en el nivel superior de la hoja de estilos, sino también dentro de cualquier grupo de reglas condicionales.*/
+/*max-width en CSS se utiliza para establecer el ancho máximo de un elemento especificado. La propiedad . max-width anula la propiedad de ancho, pero Min-Width siempre anulará . max-width , ya sea seguido antes o después del ancho en su declaración.*/
+@media (max-width:800px) {
+    .image img {
+        width: 60%;
+    }
+}
+
+/* ESTILO CARTAS BOOSTRAP */
+/*object-fit: cover le dice al elemento que escale su contenido para que se ajuste a la relación de aspecto del elemento contenedor mientras cubre completamente el elemento contenedor */
+
+.card-img-top {
+    height: 400px;
+    width: auto;
+    gap:10px;
+}
+
+/* La propiedad CSS text-transform especifica el cambio entre mayúsculas y minúsculas del texto de un elemento. Puede ser usada para que un texto aparezca completamente en mayúsculas, en minúsculas, o con la primera letra de cada palabra en mayúscula. */
+/*La propiedad text-transform permite que el texto se transforme por alguna de cuatro propiedades: Capitalize (escribe en mayúsculas el primer carácter de cada palabra) UPPERCASE (escribe en mayúsculas todos los caracteres de cada palabra) lowercase (usa letras pequeñas para todos los caracteres de cada palabra) */
+
+.card-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color:darkgray;
+}
+
+/* ESTILOS DE MAIN */
+/*La propiedad CSS text-transform especifica cómo poner en mayúscula el texto de un elemento . Se puede utilizar para que el texto aparezca en mayúsculas o minúsculas, o con cada palabra en mayúscula.*/
+main h2 {
+    text-transform: uppercase;
+    margin-top: 10px;
+    color:bisque;
+    text-align: center;
+}
+
+main h5 {
+    text-align: right;
+}
+
+main p {
+    font-style: italic;
+}
+
+main img {
+    width: 100%;
+    object-fit: cover;
+}
+
+main .leermas {
+    background-color:bisque;
+    color:black;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: fit-content;
+}
+
+main.leermas:hover {
+    background-color: yellow;
+    color: white;
+}
+
+@media (max-width:800px) {
+    .principal {
+        flex-direction: column;
+    }
+}
+/*La propiedad flex-direction en CSS se utiliza para establecer la dirección del eje principal del contenedor flexible . Puede tener uno de cuatro valores: row , row-reverse , column o column-reverse . row es el valor predeterminado y organiza los elementos flexibles horizontalmente.*/
+/*Flex-direction: row — El contenido se ejecuta de izquierda a derecha (predeterminado) Flex-direction: row-reverse — El contenido se ejecuta de derecha a izquierda Flex -direction: column — El contenido se ejecuta de arriba a abajo (predeterminado)*/
+/*El display block **establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo. Es posible añadir medidas de anchura width y altura height a estos a elementos. */
+ 
+.vermas {
+    display: block;
+    background-color: bisque;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+main.vermas {
+    background-color: yellow;
+    color: white;
+}
+
+/* ESTILOS FOOTER */ 
+
+footer {
+    width: 100%;
+    height: auto;
+    padding:10px;
+    text-align: center;
+    background-color: black;
+    color:white;
+}
+
+.footer h3 {
+    color:yellow;
+}
+
+.footer a {
+    color:bisque;
+}
+
+.footer p {
+    color: bisque;
+}
+
+/* ESTILOS FORMULARIO */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('../img/fondo1.jpg');
+  }
+  
+  .form-register {
+    width: 400px;
+    background: bisque;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+  .form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .controls {
+    width: 100%;
+    background: darkgray;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid yellow;
+    font-size: 18px;
+    color: black;
+  }
+  
+  .form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  
+  .form-register a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .form-register a:hover {
+    color: darkgray;
+    text-decoration: underline;
+  }
+  
+  .form-register .botons {
+    width: 100%;
+    background: yellow;
+    border: none;
+    padding: 12px;
+    color: black;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  /* Estilos productos */
+
+.productos {
+    color:bisque;
+    text-align: center;
+}
+
+.container-fluid {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.productos p {
+    text-align: center;
+}
+
+.productos {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: grey;
+}
+
+.productos-iframe iframe {
+    width: 100%;
+    height: 50vh;
+}
+
+.productos img {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+}
+
+.carousel-item img {
+    width: 90%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    gap: 10pxS;
+}
+
+@media (max-width:800px) {
+    .carousel-item img {
+        object-fit: contain;
+        height: auto;
+    }
+
+.carousel-inner {
+    object-fit: contain;
+}
+}
+
+/*ESTILOS SERVICIOS */
+
+/*Use las utilidades justify-content en los contenedores flexbox para cambiar la alineación de los elementos flexibles en el eje principal (el eje x para iniciar, el eje y si flex-direction: column ). Elija entre start (predeterminado del navegador), end , center , between o around . También existen variaciones adaptables para justify-content */
+
+.mainservicios {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    justify-content: center;
+}
+
+.serviciosh2 {
+    color: bisque;
+    text-align: center;
+}
+
+.serviciosh3 {
+    color: yellow;
+}
+
+.listaservicios {
+    font-size: 16px;
+}
+
+/* MAIN CONTACTO */
+
+.maincontacto {
+        flex-basis: 100%;
+        background-color: grey;
+        padding: 20px;
+        padding-left: 40px;
+}
+
+
+
+
+
+
